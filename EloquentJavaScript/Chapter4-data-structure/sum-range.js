@@ -1,7 +1,15 @@
-function range(start, end) {
+function range(start, end, step = 1) {
   let result = [];
-  for (let i = start; i <= end; i++) {
-    result.push(i);
+  if (step < 0) {
+    for (let i = start; i >= end; i += step) {
+      console.log(i);
+      result.push(i);
+    }
+  } else {
+    for (let i = start; i <= end; i += step) {
+      console.log(i);
+      result.push(i);
+    }
   }
   return result; //array
 }
@@ -15,3 +23,5 @@ function sum(numbers) {
 }
 
 console.log(sum(range(1, 10)));
+console.log(sum(range(1, 10, 2)));
+console.log(sum(range(10, 1, -1)));
